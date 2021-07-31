@@ -1,0 +1,49 @@
+{
+    "users" : [
+        {
+            "uid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "name": "김빛나리",
+            "email": "nari@gmail.com",
+            "color": "#039BE5",
+            "shareUid": [
+                {
+                    "uid": "7e476687-0627-40cf-bcde-09c9cfe7cb18"
+                },
+                {  
+                    "uid": "1a838393-0999-4bd1-a14b-a08fdc7e9797"
+                }
+    
+            ]
+        },
+        {
+            "uid": "7e476687-0627-40cf-bcde-09c9cfe7cb18",
+            "name": "Bitnari Kim",
+            "email": "bling@gmail.com",
+            "color": "#AD1457",
+            "shareUid": [
+                {
+                    "uid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089"
+                },
+                {  
+                    "uid": "1a838393-0999-4bd1-a14b-a08fdc7e9797"
+                }
+    
+            ]
+        },
+        {
+            "uid": "1a838393-0999-4bd1-a14b-a08fdc7e9797",
+            "name": "Unknown user",
+            "email": "idontknow@gmail.com",
+            "color": "#137333",
+            "shareUid": [
+                {
+                    "uid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089"
+                },
+                {  
+                    "uid": "7e476687-0627-40cf-bcde-09c9cfe7cb18"
+                }
+    
+            ]
+        }
+    ]
+}

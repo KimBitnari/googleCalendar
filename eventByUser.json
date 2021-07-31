@@ -1,0 +1,88 @@
+{
+    "eByUsers": [
+        {
+            "uid": "de5c90ab-ada8-4a7d-1e80-da51b35def73",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "82c9aabd-4a9a-4e55-b753-07607e2f3826",
+            "isGoing": 1
+        },
+        {
+            "uid": "108d6f4c-9808-9808-9808-05db0cabc8bc",
+            "hostUid": "7e476687-0627-40cf-bcde-09c9cfe7cb18",
+            "eventUid": "82c9aabd-4a9a-4e55-b753-07607e2f3826",
+            "isGoing": 0
+        },
+        {
+            "uid": "9c2647d8-6383-410a-8dc6-d9e1bf6bbaab",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "3512db5c-af2a-481c-b19d-a8de43d9a9b0",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-ringle1",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "ringle1",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-ringle2",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "ringle2",
+            "isGoing": 2
+        },
+        {
+            "uid": "ebu-ringle3",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "ringle3",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-ringle4",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "ringle4",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-ringle5",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "ringle5",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-meeting1",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "meet1",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-meeting2",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "meet2",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-birth",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "birth",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-dinner1",
+            "hostUid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
+            "eventUid": "dinner",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-dinner2",
+            "hostUid": "7e476687-0627-40cf-bcde-09c9cfe7cb18",
+            "eventUid": "dinner",
+            "isGoing": 1
+        },
+        {
+            "uid": "ebu-dinner3",
+            "hostUid": "1a838393-0999-4bd1-a14b-a08fdc7e9797",
+            "eventUid": "dinner",
+            "isGoing": 1
+        }  
+    ]
+}
