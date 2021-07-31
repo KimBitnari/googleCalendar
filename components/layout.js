@@ -17,6 +17,7 @@ import Router from 'next/router';
 import users from '../users.json';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Image from 'next/image'
 
 export default function Layout({ children }) {
     const dispatch = useDispatch();
@@ -178,10 +179,10 @@ export default function Layout({ children }) {
                         <div className="p-3 mx-1 inline-block align-middle cursor-pointer"><IoMenu size="24"/></div>
                         <div className="relative top-1 float-left">
                             <Link href="/">
-                                <a className="inline-block align-middle">
-                                  <img className="inline-block" src={"https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_"+now.getDate()+"_2x.png"}
-                                      style={{ width:"40px" }} />
-                                  <span className="inline-block text-gray-600 text-2xl align-middle pl-2 font-light">Calendar</span>
+                                <a className="inline-block align-middle flex">
+                                  <Image src={`https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_${now.getDate()}_2x.png`} alt="logo"
+                                      width={40} height={40} />
+                                  <span className="text-gray-600 text-2xl pl-2 font-light pt-1">Calendar</span>
                                 </a>
                             </Link>
                         </div>
