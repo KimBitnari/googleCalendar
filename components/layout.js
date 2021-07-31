@@ -179,7 +179,7 @@ export default function Layout({ children }) {
                         <div className="p-3 mx-1 inline-block align-middle cursor-pointer"><IoMenu size="24"/></div>
                         <div className="relative top-1 float-left">
                             <Link href="/">
-                                <a className="inline-block align-middle flex">
+                                <a className="align-middle flex">
                                   <Image src={`https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_${now.getDate()}_2x.png`} alt="logo"
                                       width={40} height={40} />
                                   <span className="text-gray-600 text-2xl pl-2 font-light pt-1">Calendar</span>
@@ -223,8 +223,8 @@ export default function Layout({ children }) {
             <main>
                 <div className="h-screen float-left min-w-max" style={{ width: "256px" }}>
                     <div className="flex shadow-md rounded-full h-12 py-2 px-3 w-28 cursor-pointer ml-3 my-4" onClick={() => { setMakeCalendar(!makeCalendar); }}>
-                        <img className="absolute" src="https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png" width="34" />
-                        <p className="my-2 ml-10 text-xs">만들기</p>
+                        <Image className="absolute" src="https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png" width={28} height={24} />
+                        <p className="my-2 ml-5 text-xs">만들기</p>
                     </div>
                     <div className="pl-4 pb-4 pr-3" style={{ width:"246px", fontSize:"10px" }}>
                       <span>
