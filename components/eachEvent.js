@@ -25,6 +25,18 @@ export default function EachEvent (props) {
 
     }
 
+    const editEvents = (eventUid) => {
+    }
+
+    const deleteEvents = (eventUid) => {
+        // const inIndex = inboxD.findIndex(x => x.uid === id)
+        // if(inIndex != -1) {
+        //     inboxD.splice(inIndex, 1)
+        //     setInboxMails(inboxD)
+        //     dispatch(setInbox(inboxD));
+        // }
+    }
+
     function generate() {
         let clr = "";
         let left = "";
@@ -68,8 +80,8 @@ export default function EachEvent (props) {
         <div className={isOpen? `absolute z-10 rounded bg-white w-96 shadow-lg p-1 pb-4 -top-5 ${modalPosition}`: "hidden"}>
             <div className="text-sm pl-4 py-2 text-gray-600 rounded-t-xl">
                 <p className="inline-block float-right mr-2 cursor-pointer w-6 h-6 text-center text-xl leading-4 hover:bg-gray-300" onClick={() => setOpen(false)}>x</p>
-                <BiTrash className="inline-block float-right mr-4 cursor-pointer leading-4 w-5 h-5 hover:bg-gray-300" size="18" />
-                <BiPencil className="inline-block float-right mr-4 cursor-pointer leading-4 w-5 h-5  hover:bg-gray-300" size="18" />
+                <BiTrash className="inline-block float-right mr-4 cursor-pointer leading-4 w-5 h-5 hover:bg-gray-300" size="18" onClick={() => deleteEvents(props.evnet.e.uid)} />
+                <BiPencil className="inline-block float-right mr-4 cursor-pointer leading-4 w-5 h-5  hover:bg-gray-300" size="18" onClick={() => editEvents(props.evnet.e.uid)} />
             </div>
             <div className="px-5 mt-5">
                 <div className="flex mb-4">

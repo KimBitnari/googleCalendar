@@ -28,9 +28,9 @@ export default function Home() {
   let now = new Date();
   let date = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   let week = makeWeekArr(date);
-  const events = useSelector((state) => state.user.event);
+  const [events, setEvents] = useState(useSelector((state) => state.user.event));
   const [allEvents, setAllEvents] = useState([])
-  const originEvents = useSelector((state) => state.user.originEvents);
+  const [originEvents, setOriginEvents] = useState(useSelector((state) => state.user.originEvents));
 
   useEffect(() => {
     const others = []

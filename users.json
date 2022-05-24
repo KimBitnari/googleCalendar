@@ -2,8 +2,8 @@
     "users" : [
         {
             "uid": "90f8e8e2-9808-4614-9b18-b8b4b58ed089",
-            "name": "김빛나리",
-            "email": "nari@gmail.com",
+            "name": "홍길동",
+            "email": "gildong@gmail.com",
             "color": "#039BE5",
             "shareUid": [
                 {
@@ -17,7 +17,7 @@
         },
         {
             "uid": "7e476687-0627-40cf-bcde-09c9cfe7cb18",
-            "name": "Bitnari Kim",
+            "name": "Bling Kim",
             "email": "bling@gmail.com",
             "color": "#AD1457",
             "shareUid": [

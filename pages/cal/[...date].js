@@ -39,9 +39,9 @@ const makeWeekArr = (date) => {
 export default function Post({ year, month, date }) {
     let d = new Date(year, month-1, date);
     let week = makeWeekArr(d);
-    const events = useSelector((state) => state.user.event);
+    const [events, setEvents] = useState(useSelector((state) => state.user.event));
     const [allEvents, setAllEvents] = useState([])
-    const originEvents = useSelector((state) => state.user.originEvents);
+    const [originEvents, setOriginEvents] = useState(useSelector((state) => state.user.originEvents));
 
     useEffect(() => {
       const others = []

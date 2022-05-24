@@ -19,7 +19,7 @@ export default function EachWeekView (props) {
                         t.map((tc, index) => {
                             //moment.utc(e.e.start).local().format().slice(11, 16).replace(":", "")
                             const timeData = props.eventData.filter(e => moment.utc(e.e.start).local().format("HH") == tc)
-                            return <TableBody timeData={timeData} weekIdx={index} key={index} />
+                            return <TableBody timeData={timeData} weekIdx={props.index} key={index} />
                         })
                     }
                 </tbody>

@@ -10,7 +10,7 @@ import { BsPerson } from "react-icons/bs";
 import { BiTimeFive, BiCalendarEvent } from "react-icons/bi";
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { setNewEvent } from '../reducers/user';
+import { setNewEvent, setNewEventByUser, setEvent } from '../reducers/user';
 import { v4 as uuidv4 } from 'uuid';
 import moment, { Moment as MomentTypes } from 'moment';
 import Router from 'next/router';
@@ -63,10 +63,8 @@ export default function Layout({ children }) {
         eventUid: evnetUid,
         isGoing: 1
       }
-      const myebup = [...originEBU]
-      myebup.push(myEbuPayload)
-      dispatch(setNewEvent(myebup));
-      setOriginEBU(myebup);
+      const ebup = [...originEBU]
+      ebup.push(myEbuPayload)
       
       for(var i in madeG) {
         const uInfo = users.users.filter(u => u.email == madeG[i]);
@@ -78,22 +76,23 @@ export default function Layout({ children }) {
             eventUid: evnetUid,
             isGoing: 0
           }
-          const ebup = [...originEBU]
           ebup.push(ebuPayload)
-          dispatch(setNewEvent(ebup));
-          setOriginEBU(ebup);
 
           resultG.push({
             uid: uInfo[0].uid
           })
         }
       }
+      dispatch(setNewEventByUser(ebup));
+      setOriginEBU(ebup);
 
+      const cst = new Date(createDate.getFullYear() + "-" + ("0" + (createDate.getMonth() + 1)).slice(-2) + "-" + ("0" + createDate.getDate()).slice(-2) +"T"+moment.utc(createSTime).local().format("HH:mm")+":00")
+      const ce = new Date(createDate.getFullYear() + "-" + ("0" + (createDate.getMonth() + 1)).slice(-2) + "-" + ("0" + createDate.getDate()).slice(-2) +"T"+moment.utc(createETime).local().format("HH:mm")+":00")
       const ePayload = {
         uid: evnetUid,
         title: title==""? "(제목 없음)": title,
-        start: createDate.getFullYear() + "-" + ("0" + (createDate.getMonth() + 1)).slice(-2) + "-" + ("0" + createDate.getDate()).slice(-2) +"T"+moment.utc(createSTime).local().format("HH:mm")+":00",
-        end: createDate.getFullYear() + "-" + ("0" + (createDate.getMonth() + 1)).slice(-2) + "-" + ("0" + createDate.getDate()).slice(-2) +"T"+moment.utc(createETime).local().format("HH:mm")+":00",
+        start: cst.toUTCString(),
+        end: ce.toUTCString(),
         organizerUid: jwtTokenUser.uid,
         guests: resultG
       }
@@ -101,6 +100,25 @@ export default function Layout({ children }) {
       const ep = [...originEvents]
       ep.push(ePayload)
       dispatch(setNewEvent(ep));
+
+      let result = []
+      let data = ebup.filter(event => event.hostUid == jwtTokenUser.uid);
+
+      for(var i in data) {
+        result.push(data[i]);
+      }
+
+      for(var i in jwtTokenUser.shareUid) {
+        data = ebup.filter(event => event.hostUid == jwtTokenUser.shareUid[i].uid);
+        if(data == '') continue;
+        else {
+          for(var i in data) {
+            result.push(data[i]);
+          }
+        }
+      }
+
+      dispatch(setEvent(result));
 
       setMakeCalendar(false);
     }

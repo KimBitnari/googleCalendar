@@ -5,15 +5,26 @@ import eByUsers from '../eventByUser.json';
 export const SET_USER_PROFILE = 'SET_USER_PROFILE'
 export const SET_EVENT = 'SET_EVENT'
 export const SET_ORGINEVENTS = 'SET_ORGINEVENTS'
+export const SET_ORGINEVENTSBYUSER = 'SET_ORGINEVENTSBYUSER'
 
 export const setUserProfile = (userProfile) => ({
   type: SET_USER_PROFILE,
   payload: userProfile,
 })
 
-export const setNewEvent = (event) => ({
-  type: SET_ORGINEVENTS,
+export const setEvent = (event) => ({
+  type: SET_EVENT,
   payload: event,
+})
+
+export const setNewEvent = (originEvents) => ({
+  type: SET_ORGINEVENTS,
+  payload: originEvents,
+})
+
+export const setNewEventByUser = (originEBU) => ({
+  type: SET_ORGINEVENTSBYUSER,
+  payload: originEBU,
 })
 
 const initialEvents = (uid, shares) => {
@@ -37,22 +48,6 @@ const initialEvents = (uid, shares) => {
   return result
 }
 
-// const initialShareEvents = (shares) => {
-//   let result = []
-
-//   for(var i in shares) {
-//     let data = eByUsers.eByUsers.filter(event => event.hostUid == shares[i].uid);
-//     if(data == '') continue;
-//     else {
-//       for(var i in data) {
-//         result.push(data[i]);
-//       }
-//     }
-//   }
-  
-//   return result
-// }
-
 const initialState = {
   userProfile: {
     email: users.users[0].email,
@@ -62,9 +57,8 @@ const initialState = {
     shareUid: users.users[0].shareUid
   },
   event: initialEvents(users.users[0].uid, users.users[0].shareUid),
-  originEvents: events,
+  originEvents: events.events,
   originEBU: eByUsers.eByUsers
-  //shareEvent: initialShareEvents(users.users[0].shareUid)
 }
 
 const user = (state = initialState, action) => {
@@ -76,10 +70,24 @@ const user = (state = initialState, action) => {
       }
     }
 
-    case SET_ORGINEVENTS:{
+    case SET_EVENT:{
       return {
         ...state,
         event: action.payload,
+      }
+    }
+
+    case SET_ORGINEVENTS:{
+      return {
+        ...state,
+        originEvents: action.payload,
+      }
+    }
+
+    case SET_ORGINEVENTSBYUSER:{
+      return {
+        ...state,
+        originEBU: action.payload,
       }
     }
 
@@ -96,7 +104,6 @@ const user = (state = initialState, action) => {
         event: initialEvents(users.users[0].uid, users.users[0].shareUid),
         originEvents: events.events,
         originEBU: eByUsers.eByUsers
-        //shareEvent: initialShareEvents(users.users[0].shareUid)
       }
   }
 };
